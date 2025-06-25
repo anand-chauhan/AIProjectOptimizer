@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Users</h2>
+
+{% if users %}
+  <table border="1">
+    <tr><th>Name</th><th>Email</th><th>Role</th></tr>
+    {% for u in users %}
+      <tr><td>{{ u.name }}</td><td>{{ u.email }}</td><td>{{ u.role }}</td></tr>
+    {% endfor %}
+  </table>
+{% else %}
+  <p>No users found.</p>
+{% endif %}
+
+{% endblock %}
+  

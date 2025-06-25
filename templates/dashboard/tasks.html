@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📋 Your Assigned Tasks</h2>
+
+<table border="1">
+  <tr><th>Title</th><th>Description</th><th>Priority</th><th>Status</th><th>Created At</th></tr>
+  {% for task in tasks %}
+    <tr>
+      <td>{{ task.task_title }}</td>
+      <td>{{ task.task_description }}</td>
+      <td>{{ task.priority }}</td>
+      <td>{{ task.status }}</td>
+      <td>{{ task.created_at }}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% endblock %}
+  

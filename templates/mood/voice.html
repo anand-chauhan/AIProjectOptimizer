@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Voice Mood Detection</h2>
+<form method="post" enctype="multipart/form-data">
+  <label>Upload your voice note (.mp3 or .wav)</label><br>
+  <input type="file" name="file" accept="audio/*" required><br><br>
+  <button type="submit">Analyze Mood</button>
+</form>
+
+{% if result %}
+  <h3>Transcript: "{{ result.transcript }}"</h3>
+  <p>Detected Emotion: <strong>{{ result.emotion }}</strong></p>
+  <p>Confidence: {{ result.confidence }}</p>
+  <p>BERT Label: {{ result.original_label }}</p>
+{% endif %}
+
+{% if task_info %}
+  <hr>
+  <h3>AI Assigned Task:</h3>
+  <p><strong>{{ task_info.task }}</strong></p>
+  <p>Priority: {{ task_info.priority }}</p>
+  <p>Description: {{ task_info.description }}</p>
+{% endif %}
+{% endblock %}
+  

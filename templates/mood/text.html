@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Text-Based Mood Check</h2>
+<form method="post">
+  <label>How are you feeling today?</label><br>
+  <textarea name="mood_text" rows="4" cols="50" required></textarea><br>
+  <button type="submit">Analyze Mood</button>
+</form>
+
+{% if result %}
+  <h3>Detected Emotion: {{ result.emotion }}</h3>
+  <p>Confidence: {{ result.confidence }}</p>
+  <p>Original Label: {{ result.original_label }}</p>
+{% endif %}
+
+{% if task_info %}
+  <hr>
+  <h3>AI Assigned Task:</h3>
+  <p><strong>{{ task_info.task }}</strong></p>
+  <p>Priority: {{ task_info.priority }}</p>
+  <p>Description: {{ task_info.description }}</p>
+{% endif %}
+{% endblock %}
+  

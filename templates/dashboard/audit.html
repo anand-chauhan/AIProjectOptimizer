@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>🧾 Audit Log</h2>
+
+<table border="1">
+  <tr><th>User</th><th>Source</th><th>Emotion</th><th>Date</th></tr>
+  {% for log in logs %}
+    <tr>
+      <td>{{ log.name }}</td>
+      <td>{{ log.mood_source }}</td>
+      <td>{{ log.detected_emotion }}</td>
+      <td>{{ log.created_at }}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% endblock %}
+  

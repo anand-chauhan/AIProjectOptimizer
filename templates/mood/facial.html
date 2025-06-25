@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>📷 Facial Mood Detection</h2>
+
+  <form method="post" enctype="multipart/form-data">
+    <label>Select a photo of your face (webcam or selfie):</label><br>
+    <input type="file" name="file" accept="image/*" required><br><br>
+    <button type="submit">Detect Emotion</button>
+  </form>
+
+  {% if emotion %}
+    <hr>
+    <h3>🧠 Detected Emotion: <span style="color:green">{{ emotion }}</span></h3>
+  {% endif %}
+
+  {% if task_info %}
+    <hr>
+    <h3>🤖 AI Assigned Task</h3>
+    <p><strong>{{ task_info.task_title }}</strong></p>
+    <p><strong>Priority:</strong> {{ task_info.priority }}</p>
+    <p><strong>Description:</strong> {{ task_info.description }}</p>
+  {% endif %}
+  
+  {% if message %}
+    <hr>
+    <div style="padding:10px; background-color:#eef; border-left:4px solid #88f;">
+      {{ message }}
+    </div>
+  {% endif %}
+
+  {# 🐞 Debug Dump (can be removed in production) #}
+  {# <pre>{{ task_info | pprint }}</pre> #}
+
+{% endblock %}

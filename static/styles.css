@@ -1,0 +1,180 @@
+/* 🎨 Font and Base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif;
+  background: #f4f6f9;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* 🧭 Navigation */
+nav {
+  background-color: #3498DB;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.badge {
+  background-color: #e74c3c;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+}  
+
+/* 📦 Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* 📝 Headers */
+h1, h2, h3 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+/* 📊 Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+table th, table td {
+  padding: 14px 18px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #34495e;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ✅ Form Styles */
+form {
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 500px;
+}
+
+form label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+form label span {
+  width: 140px;
+  text-align: left;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #34495e;
+  background-color: #fefefe;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border 0.3s, box-shadow 0.3s;
+  margin-left: 10px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* 🔘 Buttons */
+form button, button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+form button:hover, button:hover {
+  background-color: #27ae60;
+}
+
+/* 🧾 Misc */
+hr {
+  margin: 30px 0;
+  border: 0;
+  height: 1px;
+  background: #ddd;
+}
+
+canvas {
+  margin-top: 30px;
+  max-width: 100%;
+}
+
+/* 🎯 Input Types */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+textarea,
+select {
+  max-width: 400px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+ul li {
+  background-color: #fefefe;
+  margin: 10px 0;
+  padding: 12px 16px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.03);
+  border-radius: 5px;
+}

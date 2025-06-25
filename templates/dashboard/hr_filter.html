@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>🔎 HR Mood Filter</h2>
+
+{% if moods %}
+<table border="1">
+  <tr><th>Employee</th><th>Mood</th><th>Date</th></tr>
+  {% for m in moods %}
+    <tr>
+      <td>{{ m.name }}</td>
+      <td>{{ m.detected_emotion }}</td>
+      <td>{{ m.created_at }}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>No mood records found for your team.</p>
+{% endif %}
+
+{% endblock %}
+  

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📈 Weekly Mood Analytics</h2>
+
+<p>
+  {% if user.role == 'employee' %}
+    Viewing your own mood trends
+  {% elif user.role == 'hr' %}
+    Viewing your team’s moods
+  {% else %}
+    Viewing all employees’ mood analytics
+  {% endif %}
+</p>
+
+{% if stats %}
+<canvas id="moodChart" width="600" height="300"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const data = {
+    labels: [{{ stats | map(attribute='mood') | map('tojson') | join(', ') }}],
+    datasets: [{
+      label: 'Mood Counts (Last 7 Days)',
+      data: [{{ stats | map(attribute='count') | join(', ') }}],
+      backgroundColor: [
+        '#5DADE2', '#58D68D', '#F4D03F', '#EC7063', '#AF7AC5',
+        '#F39C12', '#A569BD', '#45B39D', '#E74C3C', '#3498DB'
+      ]
+    }]
+  };
+  
+  new Chart(document.getElementById('moodChart'), {
+    type: 'bar',
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      }
+    }
+  });
+</script>
+{% else %}
+<p>No mood data recorded in the last 7 days.</p>
+{% endif %}
+{% endblock %}
