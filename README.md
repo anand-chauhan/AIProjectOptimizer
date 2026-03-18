@@ -69,7 +69,7 @@ MoodSentry is an intelligent FastAPI-based system that detects employee emotions
 
 ### 1. Clone the repo
 
-    git clone https://github.com/hitakshi-25/MoodSentry.git
+    git clone https://github.com/anand-chauhan/AIProjectOptimizer
     cd MoodSentry
 
 ### 2. Create & activate a virtual environment
